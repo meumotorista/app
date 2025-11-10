@@ -1,4 +1,5 @@
-import { StyleSheet, SafeAreaView, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context';
 import React, { useState } from 'react'
 import tw from 'tailwind-react-native-classnames'
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
