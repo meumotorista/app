@@ -38,7 +38,8 @@ const HomeScreen = () => {
           onPress={(data, details = null) => {
             dispatch(setOrigin({
               location: details.geometry.location,
-              description: data.description
+              description: data.description,
+              predefinedPlaces: []
             }))
 
             dispatch(setDestination(null))
