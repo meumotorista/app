@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import { setDestination } from '../redux/slices/navSlice';
 import { useNavigation } from '@react-navigation/native';
 import NavFavorites from './NavFavorites';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Pressable, TouchableOpacity } from 'react-native-gesture-handler';
 import { Icon } from 'react-native-elements';
 
 const NavigateCard = () => {
@@ -29,8 +29,7 @@ const NavigateCard = () => {
             onPress={(data, details = null) => {
               dispatch(setDestination({
                 location: details.geometry.location,
-                description: data.description,
-                predefinedPlaces: []
+                description: data.description
               }))
 
               navigation.navigate('RideOptionsCard')
@@ -49,7 +48,7 @@ const NavigateCard = () => {
       </View>
 
       <View style={tw`flex-row bg-white justify-evenly border-gray-100`}>
-        <TouchableOpacity
+        <Pressable
         onPress={() => navigation.navigate('RideOptionsCard')}
         style={tw`flex flex-row justify-between bg-black w-24 px-2 py-3 rounded-full`}>
           <Icon 
@@ -60,9 +59,9 @@ const NavigateCard = () => {
             style={tw`mr-2`}
           />
           <Text style={tw`text-white text-center`}>Corridas</Text>
-        </TouchableOpacity>
+        </Pressable>
 
-      <TouchableOpacity
+      <Pressable
         onPress={() => navigation.navigate('EatsScreen')}
         style={tw`flex flex-row justify-between w-24 px-4 py-3 rounded-full`}
       >
@@ -74,7 +73,7 @@ const NavigateCard = () => {
           style={tw`mr-2`}
         />
         <Text style={tw`text-center`}>Comida</Text>
-      </TouchableOpacity>
+      </Pressable>
 
       </View>
     </SafeAreaView>
